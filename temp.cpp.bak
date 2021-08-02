@@ -15,8 +15,7 @@ namespace f0{
 }
 
 namespace f1 {
-int f()
-{
+    int f() {
         int n, a, b, c, d;
         std::cin >> n;
         a = n % 10;
@@ -455,7 +454,7 @@ namespace f33 {
             // нет или бесконечность
             if (a1 / a2 == b1 / b2 && b1 / b2 == c1 / c2) {
                 //                бесконечно.
-                std::cout << "dfgadfgasd;
+                std::cout << ;
             }
         }
 
