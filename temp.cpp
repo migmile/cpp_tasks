@@ -119,8 +119,8 @@ namespace f12 {
 #include <cmath>
 #include <iostream>
 namespace f121 {
-    int f() {
-        int a, b, c;
+ //   int f() {
+  //      int a, b, c;
 
 // площадь треугольника по 3-м сторонам
 void f(){
@@ -455,25 +455,232 @@ namespace f33 {
             // нет или бесконечность
             if (a1 / a2 == b1 / b2 && b1 / b2 == c1 / c2) {
                 //                бесконечно.
-                std::cout << "dfgadfgasd;
+                std::cout << "dfgadfgasd";
             }
         }
 
 
-        x = ((e * d) - (f * b)) / ((a * d) - (c * b));
-        y = ((a * f) - (c * e)) / ((a * d) - (c * b));
-        std::cout << x << " " << y;
+        //x = ((e * d) - (f * b)) / ((a * d) - (c * b));
+        //y = ((a * f) - (c * e)) / ((a * d) - (c * b));
+        //std::cout << x << " " << y;
+        return 0;
+    }
+}
+
+// ЦИКЛЫ
+#include <vector>
+#include <iostream>
+using namespace std;
+namespace f41 {
+    int f() {
+        int n;
+        cin >> n;
+        vector<int> v(n);
+        for (int i = 0; i < n; i++) cin >> v[i]; 
+        for (int i = 0; i < n; i += 2) cout << v.at(i) << " ";
+        return 0;
+    }
+
+}
+
+#include <vector>
+#include <iostream>
+using namespace std;
+namespace f42 {
+    //Выведите все четные элементы массива.
+    int f() {
+        int n;
+        cin >> n;
+        vector<int> v(n);
+        for (int i = 0; i < n; i++) cin >> v[i];
+        for (int i = 0; i < n; i ++) if (v[i]%2 == 0 ) cout << v[i] << " ";
+        return 0;
+    }
+
+}
+
+#include <vector>
+#include <iostream>
+using namespace std;
+namespace f43 {
+    //Найдите количество положительных элементов в данном массиве.
+    int f() {
+        int n, count{ 0 };
+        cin >> n;
+        vector<int> v(n);
+        for (int i = 0; i < n; ++i) {
+            cin >> v[i]; 
+            if (v[i] > 0) ++count;
+        }
+        cout << count;
+        return 0;
+    }
+
+}
+
+#include <vector>
+#include <iostream>
+using namespace std;
+namespace f44 {
+    //Дан массив чисел. Выведите все элементы массива, которые больше предыдущего элемента .
+    int f() {
+        int n;
+        cin >> n;
+        vector<int> v(n);
+        cin >> v[0];
+        for (int i = 1; i < n; i++) 
+        {
+            cin >> v[i]; 
+            if (v[i] > v[i - 1]) cout << v[i] << " "; 
+        }
+        return 0;
+    }
+
+}
+
+#include <vector>
+#include <iostream>
+using namespace std;
+namespace f45 {
+    // Дан массив целых чисел. Если в нем есть два соседних элемента одного знака, выведите эти числа. 
+    // Если соседних элементов одного знака нет - не выводите ничего. 
+    // Если таких пар соседей несколько - выведите первую пару.
+    // Элементы выводятся в порядке неубывания.
+    int f() {
+        int n;
+        cin >> n;
+        vector<int> v(n);
+        for (int i = 0; i < n; i++) cin >> v[i];
+        for (int i = 1; i < n; i++) 
+            if (v[i] * v[i - 1] > 0) {
+                cout << min(v[i - 1], v[i]) << " " << max(v[i - 1], v[i]);
+                break;
+            }
+        return 0;
+    }
+
+}
+
+#include <vector>
+#include <iostream>
+using namespace std;
+namespace f46 {
+    //Выведите значение наименьшего из всех положительных элементов в массиве. 
+    // Известно, что в массиве есть хотя бы один положительный элемент.
+    int f() {
+        int n, min_{ 0 };
+        
+        cin >> n;
+        vector<int> v(n);
+        
+        for (int i = 0; i < n; i++)
+        {
+            cin >> v[i];
+            if (v[i] > 0 && (min_ == 0 || v[i] < min_)) min_ = v[i];
+            
+        }
+        cout << min_;
+        return 0;
+    }
+
+}
+
+#include <vector>
+#include <iostream>
+using namespace std;
+namespace f47 {
+    //Выведите значение наименьшего нечетного элемента списка, а если в списке нет нечетных элементов - выведите число 0.
+    int f() {
+        int n, min_{ 0 };
+
+        cin >> n;
+        vector<int> v(n);
+
+        for (int i = 0; i < n; i++)
+        {
+            cin >> v[i];
+            if (v[i] %2 != 0 && (min_ == 0 || v[i] < min_)) min_ = v[i];
+
+        }
+        cout << min_;
+        return 0;
+    }
+}
+
+#include <vector>
+#include <iostream>
+using namespace std;
+namespace f48 {
+    // Дан список, упорядоченный по неубыванию элементов в нем. 
+    // Определите, сколько в нем различных элементов.
+    int f() {
+        int n, count{ 1 };
+        cin.clear();
+        cin >> n;
+        vector<int> v(n);
+
+        cin >> v[0];
+        for (int i = 1; i < n; ++i)
+        {
+            cin >> v[i];
+            
+     //       cout << v[i] << v[i - 1] << "  ";
+
+            if (v[i] != v[i - 1]) 
+            {
+                ++count;
+       //         cout << "!" << count << "  ";
+            }
+        }
+        cout << count;
+        cout<<"res" << endl;
+        return 0;
+    }
+}
+
+#include <vector>
+#include <iostream>
+using namespace std;
+namespace f49 {
+    // Переставьте соседние элементы массива (A[0] c A[1], A[2] c A[3] и т.д.). 
+    // Если элементов нечетное число, то последний элемент остается на своем месте.
+    int f() {
+        int n;
+        cin >> n;
+        vector<int> v(n);
+        for (int i = 0; i < n; i++) cin >> v[i];
+        for (int i = 1; i < n; i += 2) std::swap(v[i], v[i - 1]);
+        for (auto e : v) cout << e << " ";
+        return 0;
+    }
+}
+
+#include <vector>
+#include <iostream>
+using namespace std;
+namespace f49 {
+    // Циклически сдвиньте элементы списка вправо (A[0] переходит на место A[1], A[1] на место A[2], ..., 
+    // последний элемент переходит на место A[0]).
+    int f() {
+        int n;
+        cin >> n;
+        vector<int> v(n);
+        for (int i = 0; i < n; i++) cin >> v[i];
+        for (int i = 1; i < n; i ++) std::swap(v[i], v[i - 1]);
+        swap(v[0], v[n - 1]);
+        for (auto e : v) cout << e << " ";
         return 0;
     }
 }
 
 int main(int argc, char* argv[]) {
     //   QCoreApplication a(argc, argv);
-    for (int i = 0; i < 10; i++)
+    for (int i = 0; i < 5; i++)
     {
-        f33::f();
+         f49::f();                                              
+        //cout << "ALICE  "<<"POLINA  "<<a + b;
     }
 
-    //    return a.exec();
+    //    return a.exec();          
 }
 
